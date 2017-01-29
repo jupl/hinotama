@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import ColorPage from '../../color/components/page'
 
 // Container component
 const Container = styled.div`
@@ -10,9 +11,11 @@ const Container = styled.div`
   right: 0;
   overflow: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(white, gainsboro);
+  background-color: white;
+`
+
+const StyledColorPage = styled(ColorPage)`
+  flex: 1;
 `
 
 /**
@@ -20,5 +23,9 @@ const Container = styled.div`
  * @return Root component
  */
 export default function Root() {
-  return <Container>Hello, World</Container>
+  return (
+    <Container>
+      <StyledColorPage />
+    </Container>
+  )
 }

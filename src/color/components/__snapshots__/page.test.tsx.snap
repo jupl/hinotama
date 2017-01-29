@@ -1,0 +1,22 @@
+exports[`<Color.Page> Template should render as expected 1`] = `
+<div
+  className="cPPbgF">
+  <div
+    className="ijXwvP">
+    <button
+      className="bwNSRs"
+      onClick={[Function]}>
+      <
+    </button>
+    <span
+      className="gsqXms">
+      Hello, World
+    </span>
+    <button
+      className="bwNSRs"
+      onClick={[Function]}>
+      >
+    </button>
+  </div>
+</div>
+`;

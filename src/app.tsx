@@ -3,13 +3,21 @@ import {useStrict} from 'mobx'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
 import Root from './app/components/root'
+import {Color} from './color/stores'
 import Container from './common/components/container'
 
 // Reference app container to render to
 const container = document.getElementById('container')!
 
 // Mobx based stores and configurations
-const stores = {}
+const color = new Color([
+  '#39cccc',
+  '#2ecc40',
+  '#ffdc00',
+  '#ff851b',
+])
+color.startAutoCycle(4000)
+const stores = {color}
 useStrict(true)
 
 // Render application. Also register to rerender if hot loading is available.
