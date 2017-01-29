@@ -7,8 +7,8 @@ export interface IColor {
 }
 
 export class Color implements IColor {
-  private values: string[]
   private id = 0
+  private readonly values: string[]
   @observable private index = 0
 
   constructor(values: string[]) {
