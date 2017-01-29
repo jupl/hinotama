@@ -1,0 +1,90 @@
+{
+  "name": "Application",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "^6.0.0 || ^7.0.0",
+    "npm": "^3.0.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/setup-tests.ts",
+    "transform": {
+      ".tsx?": "<rootDir>/jest-ts.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.tsx?$"
+  },
+  "scripts": {
+    "start": "npm run build:prod",
+    "clean": "[ -d dist ] && trash dist || true",
+    "coverage": "npm run test -- --coverage",
+    "coverage:watch": "npm run coverage -- --watch",
+    "lint": "tslint --type-check --project tsconfig.json 'src/**/*.ts{,x}'",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "server": "npm run server:hot",
+    "server:hot": "cross-env NODE_ENV=development HOT_MODULES=true ts-node hot-server",
+    "server:story": "cross-env NODE_ENV=storybook start-storybook -p 9001",
+    "build": "npm run clean && cross-env HOT_MODULES=false webpack",
+    "build:dev": "cross-env NODE_ENV=development npm run build",
+    "build:prod": "cross-env NODE_ENV=production npm run build",
+    "build:story": "cross-env NODE_ENV=storybook build-storybook -o story"
+  },
+  "dependencies": {
+    "@types/copy-webpack-plugin": "^4.0.0",
+    "@types/enzyme": "^2.4.34",
+    "@types/globule": "^1.1.0",
+    "@types/hapi": "^16.0.0",
+    "@types/jest": "^16.0.1",
+    "@types/node": "^7.0.0",
+    "@types/react": "^15.0.0",
+    "@types/react-dom": "^0.14.17",
+    "@types/react-hot-loader": "^3.0.0",
+    "@types/react-test-renderer": "^15.4.1",
+    "@types/webpack": "^2.2.4",
+    "@types/webpack-env": "^1.13.0",
+    "awesome-typescript-loader": "^3.0.0-beta.17",
+    "babel-plugin-transform-inline-environment-variables": "^6.8.0",
+    "babel-plugin-transform-react-inline-elements": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.16.0",
+    "copy-webpack-plugin": "^4.0.0",
+    "cross-env": "^3.1.1",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.10.0",
+    "globule": "^1.0.0",
+    "json-loader": "^0.5.4",
+    "mobx": "^3.0.0",
+    "mobx-react": "^4.1.0",
+    "normalize.css": "^5.0.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "style-loader": "^0.13.1",
+    "styled-components": "^1.4.1",
+    "trash-cli": "^1.3.0",
+    "ts-node": "^2.0.0",
+    "typescript": "^2.1.4",
+    "webpack": "^2.2.0"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.23.0",
+    "enzyme": "^2.4.1",
+    "eslint-config-jupl": "^0.5.3",
+    "eventsource-polyfill": "^0.9.6",
+    "fbjs-scripts": "^0.7.1",
+    "hapi": "^16.0.1",
+    "hapi-webpack-plugin": "^1.3.0",
+    "jest": "^18.0.0",
+    "mobx-react-devtools": "^4.2.11",
+    "react-addons-test-utils": "^15.3.2",
+    "react-test-renderer": "^15.3.2",
+    "tslint": "^4.1.0",
+    "tslint-react": "^2.1.1"
+  }
+}
