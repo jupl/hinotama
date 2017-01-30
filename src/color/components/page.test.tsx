@@ -3,6 +3,8 @@ import {shallow} from 'enzyme'
 import {create} from 'react-test-renderer'
 import {Button, ColorPage} from './page'
 
+// tslint:disable:no-magic-numbers
+
 describe('<Color.Page> Template', () => {
   const mockColor = {
     value: 'white',

@@ -10,13 +10,14 @@ import Container from './common/components/container'
 const container = document.getElementById('container')!
 
 // Mobx based stores and configurations
+const COLOR_CYCLE_INTERVAL = 4000
 const color = new Color([
   '#39cccc',
   '#2ecc40',
   '#ffdc00',
   '#ff851b',
 ])
-color.startAutoCycle(4000)
+color.startAutoCycle(COLOR_CYCLE_INTERVAL)
 const stores = {color}
 useStrict(true)
 
