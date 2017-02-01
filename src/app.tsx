@@ -9,8 +9,8 @@ import Container from './common/components/container'
 const container = document.getElementById('container')!
 
 // Mobx based stores and configurations
-const stores = {}
 useStrict(true)
+const stores = {}
 
 // Render application. Also register to rerender if hot loading is available.
 if(module.hot) {
