@@ -10,6 +10,7 @@ import Container from './common/components/container'
 const container = document.getElementById('container')!
 
 // Mobx based stores and configurations
+useStrict(true)
 const COLOR_CYCLE_INTERVAL = 4000
 const color = new Color([
   '#39cccc',
@@ -19,7 +20,6 @@ const color = new Color([
 ])
 color.startAutoCycle(COLOR_CYCLE_INTERVAL)
 const stores = {color}
-useStrict(true)
 
 // Render application. Also register to rerender if hot loading is available.
 if(module.hot) {
