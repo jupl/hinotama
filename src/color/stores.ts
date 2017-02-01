@@ -28,7 +28,7 @@ export class Color implements IColor {
    * @param values List of colors to cycle through
    */
   constructor(values: string[]) {
-    if(values.length == 0) {
+    if(values.length === 0) {
       throw new Error('There must be at least one color in values list')
     }
     this.values = values
