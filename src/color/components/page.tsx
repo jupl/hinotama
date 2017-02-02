@@ -59,12 +59,15 @@ export default inject('color')(observer(ColorPage))
  * @return Color page component
  */
 export function ColorPage({className, color}: Props) {
+  // Force non-undefined stores due to behavior of Mobx's inject
+  color = color!
+
   return (
-    <StyledBackground color={color!.value} className={className}>
+    <StyledBackground color={color.value} className={className}>
       <Gradient>
-        <Button onClick={color!.previousColor}>&lt;</Button>
+        <Button onClick={color.previousColor}>&lt;</Button>
         <Text>Hello, World</Text>
-        <Button onClick={color!.nextColor}>&gt;</Button>
+        <Button onClick={color.nextColor}>&gt;</Button>
       </Gradient>
     </StyledBackground>
   )
