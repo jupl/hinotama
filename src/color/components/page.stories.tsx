@@ -1,3 +1,4 @@
+import * as colors from 'colors.css'
 import * as React from 'react'
 import {action, storiesOf} from '@kadira/storybook'
 import styled from 'styled-components'
@@ -6,9 +7,9 @@ import ColorPage from './page'
 
 // Create store instance for component
 const color = new Color([
-  '#7fdbff',
-  '#dddddd',
-  '#01ff70',
+  colors.aqua,
+  colors.silver,
+  colors.lime,
 ])
 
 // Create mock store for template

@@ -1,4 +1,5 @@
 import 'normalize.css/normalize.css'
+import * as colors from 'colors.css'
 import {useStrict} from 'mobx'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
@@ -13,10 +14,10 @@ const container = document.getElementById('container')!
 useStrict(true)
 const stores = {
   color: new Color([
-    '#39cccc',
-    '#2ecc40',
-    '#ffdc00',
-    '#ff851b',
+    colors.teal,
+    colors.green,
+    colors.yellow,
+    colors.orange,
   ]),
 }
 const COLOR_CYCLE_INTERVAL = 4000
