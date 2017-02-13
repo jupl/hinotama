@@ -2,6 +2,7 @@ import 'normalize.css/normalize.css'
 import {useStrict} from 'mobx'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
+import {createStores} from './app/stores'
 import Root from './app/components/root'
 import Container from './common/components/container'
 
@@ -10,7 +11,7 @@ const container = document.getElementById('container')!
 
 // Mobx based stores and configurations
 useStrict(true)
-const stores = {}
+const stores = createStores()
 
 // Render application. Also register to rerender if hot loading is available.
 if(module.hot) {
