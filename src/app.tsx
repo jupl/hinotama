@@ -1,10 +1,9 @@
 import 'normalize.css/normalize.css'
-import * as colors from 'colors.css'
 import {useStrict} from 'mobx'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
 import Root from './app/components/root'
-import {Color} from './color/stores'
+import {createStores} from './app/stores'
 import Container from './common/components/container'
 
 // Reference app container to render to
@@ -12,14 +11,7 @@ const container = document.getElementById('container')!
 
 // Mobx based stores and configurations
 useStrict(true)
-const stores = {
-  color: new Color([
-    colors.teal,
-    colors.green,
-    colors.yellow,
-    colors.orange,
-  ]),
-}
+const stores = createStores()
 const COLOR_CYCLE_INTERVAL = 4000
 stores.color.startAutoCycle(COLOR_CYCLE_INTERVAL)
 
