@@ -1,6 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`<App.Root> Template should render as expected 1`] = `
 <div
-  className="hSksZZ">
+  class="hSksZZ"
+>
   Hello, World
 </div>
 `;
