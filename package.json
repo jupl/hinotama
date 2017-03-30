@@ -14,7 +14,9 @@
       "tsx"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/setup-tests.ts",
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "transform": {
       ".tsx?": "<rootDir>/jest-ts.js"
     },
