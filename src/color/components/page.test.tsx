@@ -1,6 +1,5 @@
 import * as React from 'react'
 import {shallow} from 'enzyme'
-import {create} from 'react-test-renderer'
 import {Button, ColorPage} from './page'
 
 // tslint:disable:no-magic-numbers
@@ -13,8 +12,7 @@ describe('<Color.Page> Template', () => {
   }
 
   it('should render as expected', () => {
-    const component = create(<ColorPage color={mockColor} />)
-    expect(component.toJSON()).toMatchSnapshot()
+    expect(shallow(<ColorPage color={mockColor} />)).toMatchSnapshot()
   })
 
   it('should invoke events as expected', () => {

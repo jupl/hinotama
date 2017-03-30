@@ -1,3 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Color store automatic cycling should cycle color automatically 1`] = `"red"`;
 
 exports[`Color store automatic cycling should cycle color automatically 2`] = `"green"`;
