@@ -27,7 +27,7 @@
     "clean": "[ -d dist ] && trash dist || true",
     "coverage": "npm run test -- --coverage",
     "coverage:watch": "npm run coverage -- --watch",
-    "lint": "tslint --type-check --project tsconfig.json 'src/**/*.ts{,x}'",
+    "lint": "tslint --type-check --project tsconfig.json",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "server": "npm run server:hot",
