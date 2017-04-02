@@ -14,7 +14,6 @@ useStrict(true)
 const stores = createStores()
 
 // Render application. Also register to rerender if hot loading is available.
-// tslint:disable-next-line:strict-boolean-expressions
 if(module.hot) {
   module.hot.accept('./app/components/root', () => setTimeout(render))
   module.hot.accept('./common/components/container', () => setTimeout(render))
