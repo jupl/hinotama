@@ -14,9 +14,11 @@
       "tsx"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/setup-tests.ts",
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "transform": {
-      ".tsx?": "<rootDir>/jest-ts.js"
+      ".tsx?": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.tsx?$"
   },
@@ -25,7 +27,7 @@
     "clean": "[ -d dist ] && trash dist || true",
     "coverage": "npm run test -- --coverage",
     "coverage:watch": "npm run coverage -- --watch",
-    "lint": "tslint --type-check --project tsconfig.json 'src/**/*.ts{,x}'",
+    "lint": "tslint --type-check --project tsconfig.json",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "server": "npm run server:hot",
@@ -56,9 +58,9 @@
     "babel-preset-es2015": "^6.16.0",
     "colors.css": "^3.0.0",
     "copy-webpack-plugin": "^4.0.0",
-    "cross-env": "^3.1.1",
-    "css-loader": "^0.27.3",
-    "file-loader": "^0.10.0",
+    "cross-env": "^4.0.0",
+    "css-loader": "^0.28.0",
+    "file-loader": "^0.11.1",
     "globule": "^1.0.0",
     "json-loader": "^0.5.4",
     "mobx": "^3.0.0",
@@ -80,12 +82,12 @@
     "enzyme-to-json": "^1.5.0",
     "eslint-config-jupl": "^0.5.3",
     "eventsource-polyfill": "^0.9.6",
-    "fbjs-scripts": "^0.7.1",
     "hapi": "^16.0.1",
-    "hapi-webpack-plugin": "^1.3.0",
+    "hapi-webpack-plugin": "^2.0.0",
     "jest": "^19.0.2",
     "mobx-react-devtools": "^4.2.11",
     "react-addons-test-utils": "^15.3.2",
+    "ts-jest": "^19.0.6",
     "tslint": "^4.1.0",
     "tslint-react": "^2.1.1"
   }
