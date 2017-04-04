@@ -11,12 +11,7 @@
     "noUnusedParameters": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es2015",
-    "types": [
-      "jest",
-      "node",
-      "webpack-env"
-    ]
+    "target": "es2015"
   },
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true
