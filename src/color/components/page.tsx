@@ -4,10 +4,8 @@ import styled from 'styled-components'
 import {IColor} from '../stores'
 
 // Background component
-interface BackgroundProps {
+interface BackgroundProps extends React.HTMLProps<HTMLDivElement> {
   color: string
-  className?: string
-  children?: React.ReactNode
 }
 const Background = ({color: _, ...props}: BackgroundProps) =>
   <div {...props} />
