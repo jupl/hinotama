@@ -16,7 +16,7 @@ interface Props {
  * @return Container component
  */
 export default function Container({component: Component, ...stores}: Props) {
-  let child = (<Component />)
+  let child = <Component />
 
   // Unless in production, include Mobx devtools
   if(process.env.NODE_ENV !== 'production') {
