@@ -1,4 +1,4 @@
-import {Color} from './stores'
+import {Color} from '.'
 
 jest.useFakeTimers()
 

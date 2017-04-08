@@ -1,5 +1,5 @@
 import * as colors from 'colors.css'
-import {Color} from '../color/stores'
+import {Color} from '../color'
 
 /**
  * Create stores used by application

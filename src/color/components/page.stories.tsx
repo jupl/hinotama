@@ -2,7 +2,7 @@ import * as colors from 'colors.css'
 import * as React from 'react'
 import {action, storiesOf} from '@kadira/storybook'
 import styled from 'styled-components'
-import {Color} from '../stores'
+import {Color} from '..'
 import ColorPage from './page'
 
 // Create store instance for component

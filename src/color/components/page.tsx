@@ -1,7 +1,7 @@
 import {inject, observer} from 'mobx-react'
 import * as React from 'react'
 import styled from 'styled-components'
-import {IColor} from '../stores'
+import {IColor} from '..'
 
 // Background component
 interface BackgroundProps {
@@ -41,7 +41,7 @@ export const Button = styled.button`
 `
 
 /** Properties for color page component */
-export interface Props {
+interface Props {
   /** CSS color to show */
   readonly color?: IColor
 
