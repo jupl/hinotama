@@ -1,11 +1,13 @@
 import {Provider} from 'mobx-react'
 import * as React from 'react'
-import {AppContainer} from 'react-hot-loader'
+
+type StatefulComponent = React.ComponentClass<Object>
+type StatelessComponent = (() => React.ReactElement<Object>)
 
 /** Container component properties */
-interface Props<P> {
+interface Props {
   /** Component to render */
-  readonly component: React.ComponentClass<P> | (() => React.ReactElement<P>)
+  readonly component: StatefulComponent | StatelessComponent
 }
 
 /**
@@ -13,11 +15,8 @@ interface Props<P> {
  * @param props Component properties
  * @return Container component
  */
-export default function Container<P>({
-  component: Component,
-  ...stores,
-}: Props<P>) {
-  let child = <Component />
+export default function Container({component: Component, ...stores}: Props) {
+  let child = (<Component />)
 
   // Unless in production, include Mobx devtools
   if(process.env.NODE_ENV !== 'production') {
@@ -30,11 +29,5 @@ export default function Container<P>({
     )
   }
 
-  return (
-    <AppContainer>
-      <Provider {...stores}>
-        {child}
-      </Provider>
-    </AppContainer>
-  )
+  return <Provider {...stores}>{child}</Provider>
 }

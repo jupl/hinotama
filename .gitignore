@@ -1,6 +1,5 @@
-/.awcache/
-/dist/
-/story/
+**/*.js
+.next/
 
 # Created by https://www.gitignore.io/api/node
 

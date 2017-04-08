@@ -3,12 +3,8 @@ import styled from 'styled-components'
 
 // Container component
 const Container = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: auto;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,9 +12,9 @@ const Container = styled.div`
 `
 
 /**
- * Render root component representing the entire application
- * @return Root component
+ * Render home page
+ * @return Home page component
  */
-export default function Root() {
+export default function Index() {
   return <Container>Hello, World</Container>
 }
