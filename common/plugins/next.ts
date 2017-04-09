@@ -1,13 +1,19 @@
 import {Server} from 'hapi'
-import {Plugin, IPlugin} from 'hapiour-decorators'
+import {Plugin, IPlugin, IPluginOptions} from 'hapiour-decorators'
 import * as next from 'next'
 import {ServerOptions as Options} from 'next/server'
+import {isDevelopment, isProduction} from '../config'
 
 @Plugin({name: 'Next', version: '0.0.1'})
 export default class NextPlugin implements IPlugin {
+  protected options: Readonly<Options> = {
+    dev: isDevelopment,
+    quiet: isProduction,
+  }
+
   // tslint:disable-next-line:prefer-function-over-method
-  public async register(server: Server, options: Options, done: () => void) {
-    const app = next(options)
+  public async register(server: Server, _: IPluginOptions, done: () => void) {
+    const app = next(this.options)
     const nextHandler = app.getRequestHandler()
     await app.prepare()
     server.route({

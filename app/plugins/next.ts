@@ -1,16 +1,12 @@
-import {PluginConfigurator, IPluginConfigurator} from 'hapiour-decorators'
-import {ServerOptions} from 'next/server'
-import * as config from '../config'
-import NextPlugin from '../../common/plugins/next'
+import {directory} from '../config'
+import BaseNextPlugin from '../../common/plugins/next'
 
-@PluginConfigurator(NextPlugin)
-export default class NextPluginConfigurator implements IPluginConfigurator {
-  public options: ServerOptions
-
+export default class NextPlugin extends BaseNextPlugin {
   constructor() {
+    super()
     this.options = {
-      dev: config.development,
-      quiet: config.production,
+      ...this.options,
+      dir: directory,
     }
   }
 }
