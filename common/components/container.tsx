@@ -1,13 +1,9 @@
 import {Provider} from 'mobx-react'
 import * as React from 'react'
 
-type StatefulComponent = React.ComponentClass<Object>
-type StatelessComponent = (() => React.ReactElement<Object>)
-
-/** Container component properties */
 interface Props {
-  /** Component to render */
-  readonly component: StatefulComponent | StatelessComponent
+  className?: string
+  children?: JSX.Element
 }
 
 /**
@@ -15,19 +11,19 @@ interface Props {
  * @param props Component properties
  * @return Container component
  */
-export default function Container({component: Component, ...stores}: Props) {
-  let child = <Component />
-
+export default function Container({className, children, ...stores}: Props) {
   // Unless in production, include Mobx devtools
+  let devTools
   if(process.env.NODE_ENV !== 'production') {
     const {default: DevTools} = require('mobx-react-devtools')
-    child = (
-      <div>
-        <DevTools />
-        {child}
-      </div>
-    )
+    devTools = <DevTools />
   }
-
-  return <Provider {...stores}>{child}</Provider>
+  return (
+    <Provider {...stores}>
+      <div className={className}>
+        {devTools}
+        {children}
+      </div>
+    </Provider>
+  )
 }

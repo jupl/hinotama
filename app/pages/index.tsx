@@ -1,8 +1,11 @@
+import {InitialProps} from 'next/page'
 import * as React from 'react'
 import styled from 'styled-components'
+import {getStores} from '../stores'
+import Container from '../../common/components/container'
 
 // Container component
-const Container = styled.div`
+const StyledContainer = styled(Container)`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -11,10 +14,22 @@ const Container = styled.div`
   background: linear-gradient(white, gainsboro);
 `
 
-/**
- * Render home page
- * @return Home page component
- */
-export default function Index() {
-  return <Container>Hello, World</Container>
+interface Props {
+  isServer: boolean
+}
+
+export default Object.assign(Index, {getInitialProps})
+
+function Index({isServer}: Props) {
+  return (
+    <StyledContainer {...getStores(isServer)}>
+      Hello, World
+    </StyledContainer>
+  )
+}
+
+function getInitialProps({req}: InitialProps): Props {
+  const isServer = !!req
+  getStores(isServer)
+  return {isServer}
 }

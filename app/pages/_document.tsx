@@ -6,7 +6,6 @@ import Document, {
   NextScript,
 } from 'next/document'
 import * as React from 'react'
-import Container from '../../common/components/container'
 const styled = require('styled-components')
 
 export default class MyDocument extends Document<{}> {
@@ -26,7 +25,7 @@ export default class MyDocument extends Document<{}> {
       <html>
         <Head />
         <body>
-          <Container component={Main} />
+          <Main />
           <NextScript />
         </body>
       </html>
