@@ -28,5 +28,5 @@ render()
  * multiple times to rerender when a hot reload occurs.
  */
 function render() {
-  renderToDOM(<Container {...stores} component={Root} />, container)
+  renderToDOM(<Container {...stores}><Root /></Container>, container)
 }
