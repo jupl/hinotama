@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
+    "allowJs": true,
     "experimentalDecorators": true,
     "jsx": "react",
+    "maxNodeModuleJsDepth": 1,
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
+    "strict": true,
     "target": "es2015"
   },
-  "awesomeTypescriptLoaderOptions": {
-    "useBabel": true
-  }
+  "include": [
+    "src",
+    "*.ts"
+  ]
 }

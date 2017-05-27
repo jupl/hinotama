@@ -1,10 +1,10 @@
-import 'normalize.css/normalize.css'
 import {useStrict} from 'mobx'
+import 'normalize.css'
 import * as React from 'react'
 import {render as renderToDOM} from 'react-dom'
-import {createStores} from './app/stores'
-import Root from './app/components/root'
-import Container from './common/components/container'
+import {AppRoot} from '../app/components/root'
+import {createStores} from '../app/stores'
+import {Container} from '../common/components/container'
 
 // Reference app container to render to
 const container = document.getElementById('container')!
@@ -14,9 +14,9 @@ useStrict(true)
 const stores = createStores()
 
 // Render application. Also register to rerender if hot loading is available.
-if(module.hot) {
-  module.hot.accept('./app/components/root', () => setTimeout(render))
-  module.hot.accept('./common/components/container', () => setTimeout(render))
+if(module.hot) { // tslint:disable-line:strict-boolean-expressions
+  module.hot.accept('../app/components/root', () => setTimeout(render))
+  module.hot.accept('../common/components/container', () => setTimeout(render))
 }
 render()
 
@@ -26,5 +26,5 @@ render()
  * multiple times to rerender when a hot reload occurs.
  */
 function render() {
-  renderToDOM(<Container {...stores}><Root /></Container>, container)
+  renderToDOM(<Container {...stores} component={AppRoot} />, container)
 }
